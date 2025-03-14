@@ -64,6 +64,12 @@
     /*border-bottom-right-radius: 60px;*/
   }
 
+  .adout{
+    font-family: "Mitr", sans-serif;
+    font-weight: 520;
+    font-style: normal;
+  }
+
   .card {
     width: 300px;
     border-radius: 12px;

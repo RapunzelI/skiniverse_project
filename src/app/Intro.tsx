@@ -5,6 +5,7 @@ interface CardProps {
   image: string;
   title: string;
   description: string;
+  className?: string;
 }
 
 const Intro: React.FC<CardProps> = ({ image, title, description }) => {
@@ -12,7 +13,7 @@ const Intro: React.FC<CardProps> = ({ image, title, description }) => {
 
   return (
     <motion.div
-      className="relative w-80 h-96 rounded-xl overflow-hidden shadow-lg cursor-pointer"
+      className="relative w-full lg:h-90 sm:w-auto md:w-auto lg:w-80  h-90 md:h-auto rounded-xl overflow-hidden shadow-lg cursor-pointer"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       onMouseEnter={() => setIsHovered(true)}
@@ -60,3 +61,4 @@ const Intro: React.FC<CardProps> = ({ image, title, description }) => {
 };
 
 export default Intro;
+

@@ -5,20 +5,23 @@ import Image from "next/image";
 import Ingredient from "./ingredients/page";
 import Intro from "./Intro";
 
+
 export default function Home() {
   return (
+    <>
     <div>
+      {/* Motion Section */}
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { delay: 0 } }}
-        className="main md:h-[88vh] flex items-center overflow-hidden mb-16"
+        className="main md:h-[88.32vh] flex items-center overflow-hidden"
       >
         <div className="container mx-auto flex flex-col xl:flex-row items-center h-full">
           {/* Text Section */}
           <motion.div
             initial={{ opacity: 0, y: -100 }}
             animate={{ opacity: 1, y: 50, transition: { delay: 1.2, duration: 1, ease: "easeInOut" } }}
-            className="w-full text-center xl:text-left xl:w-[500px] pt-[120px] xl:pt-[40px] px-8 xl:mr-auto xl:ml-[150px]"
+            className="w-full text-center xl:text-left xl:w-[500px] pt-[70px] px-8 xl:mr-auto xl:ml-[150px] xl:mb-[200px] mb-10"
           >
             <h1 className="intro text-6xl xl:text-7xl leading-tight">
               เริ่มต้น <br /> การดูแลผิว
@@ -43,21 +46,48 @@ export default function Home() {
           </motion.div>
         </div>
       </motion.section>
+  </div>
 
-      {/* Card Section with Header */}
-        <div className="min-h-screen bg-gradient-to-br mt-24"> {/* เพิ่ม mt-24 ให้ Section นี้เลื่อนลงมา */}
-          <div className="flex flex-col items-center min-h-screen p-6">
+
+        {/* About Section */}
+        
+          <div className="flex flex-col items-center min-h-[70vh] py-10">
             {/* Header text */}
-            <h2 className="text-3xl font-semibold text-center mb-6">เกี่ยวกับเว็บไซต์</h2>
+            <h2 className="adout text-5xl font-semibold text-center mt-8 ">เกี่ยวกับเว็บไซต์</h2>
 
-            <div className="flex justify-center items-center space-x-6">
-              <Intro image="card1.png" title="Beautiful Landscape" description="Discover the beauty of nature with this stunning view." />
-              <Intro image="card2.png" title="Beautiful Landscape" description="Discover the beauty of nature with this stunning view." />
-              <Intro image="card3.png" title="Beautiful Landscape" description="Discover the beauty of nature with this stunning view." />
-            </div>
+              {/* ใช้ grid แทน flex และปรับขนาด card ใน mobile view */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14 mt-20 mb-34 ">
+                
+                  {/* ปรับขนาด card */}
+                  <Intro
+                    image="card1.png"
+                    title="Beautiful Landscape"
+                    description="Discover the beauty of nature with this stunning view."
+                  />
+                  {/* ปรับขนาด card */}
+                  <Intro
+                    image="card2.png"
+                    title="Beautiful Landscape"
+                    description="Discover the beauty of nature with this stunning view."
+                  />
+                  {/* ปรับขนาด card */}
+                  <Intro
+                    image="card3.png"
+                    title="Beautiful Landscape"
+                    description="Discover the beauty of nature with this stunning view."
+                  />
+              </div>
+
           </div>
+        
+
+
+        <div>
+
         </div>
 
-    </div>
+
+
+    </>
   );
 }
