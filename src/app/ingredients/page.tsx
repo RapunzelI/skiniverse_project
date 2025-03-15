@@ -4,21 +4,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./style.css"
 
-interface BuyButtonProps {
-    link: string;
-}
-
-const BuyButton: React.FC<BuyButtonProps> = ({ link }) => {
-    return (
-        <a
-            href={link}
-            className="inline-block bg-purple-700 text-white px-4 py-2 text-sm font-semibold cursor-pointer tracking-widest rounded-full hover:bg-purple-600"
-        >
-            ดูเพิ่ม
-        </a>
-    );
-};
-
 interface ProductProps {
     title: string;
     description: string;
@@ -28,7 +13,7 @@ interface ProductProps {
 
 const ProductCard: React.FC<ProductProps> = ({ title, description, image, link }) => {
     return (
-        <div className="w-[200px] sm:w-[220px] md:w-[250px] lg:w-[280px] rounded-xl overflow-hidden shadow-md bg-white">
+        <div className="w-[165px] sm:w-[220px] md:w-[250px] lg:w-[280px] rounded-xl overflow-hidden shadow-md bg-white ">
             <img className="w-full h-[180px] md:h-[200px] object-cover" src={image} alt={title} draggable="false" />
             <div className="px-4 py-3">
                 <span className="tracking-widest text-xs text-gray-400 mb-1">
@@ -40,9 +25,6 @@ const ProductCard: React.FC<ProductProps> = ({ title, description, image, link }
                     </a>
                 </div>
                 <p className="text-gray-600 text-xs md:text-sm">{description}</p>
-            </div>
-            <div className="px-4 pb-3">
-                <BuyButton link={link} />
             </div>
         </div>
     );
@@ -86,7 +68,7 @@ const Ingredient: React.FC = () => {
 
             {/* Grid แสดงรายการการ์ด */}
             <div className="flex justify-center">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 px-2">
+                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 px-2">
                     {filteredProducts.length > 0 ? (
                         filteredProducts.map((product, index) => (
                             <ProductCard
