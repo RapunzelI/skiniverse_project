@@ -111,3 +111,20 @@
     scrollbar-width: none;
 }
 
+
+/* ซ่อน scrollbar บน WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* ซ่อน scrollbar บน Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* ป้องกัน scrollbar แสดงผล */
+body {
+  overflow-y: scroll;
+}
+
+
