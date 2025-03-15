@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./Navbar"
-import Intro from "./Intro";
+import Footer from "./Footer";
 
 
 import "slick-carousel/slick/slick.css";
@@ -39,9 +39,9 @@ export default function RootLayout({
       >
         <Navbar/>
         
-        
-        
         {children}
+
+        <Footer/>
       </body>
     </html>
   );//<MainPage/>

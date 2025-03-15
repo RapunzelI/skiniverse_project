@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Ingredient from "./ingredients/page";
 import Intro from "./Intro";
+import Member from "./Member";
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
             {/* Text Section */}
             <motion.div
               initial={{ opacity: 0, y: -100 }}
-              animate={{ opacity: 1, y: 50, transition: { delay: 1.5, duration: 1.5, ease: "easeInOut" } }}
+              animate={{ opacity: 1, y: 50, transition: { delay: 0.2, duration: 1.5, ease: "easeInOut" } }}
               className="w-full text-center xl:text-left xl:w-[500px] pt-[70px] px-8 xl:mr-auto xl:ml-[150px] xl:mb-[200px] mb-10"
             >
               <h1 className="intro text-6xl xl:text-7xl leading-tight">
@@ -30,7 +31,7 @@ export default function Home() {
             {/* Image Section */}
             <motion.div
               initial={{ opacity: 0, bottom: "-100%" }}
-              animate={{ opacity: 1, bottom: 0, transition: { delay: 1.8, duration: 1.5, ease: "easeInOut" } }}
+              animate={{ opacity: 1, bottom: 0, transition: { delay: 0.4, duration: 1.5, ease: "easeInOut" } }}
               className="flex-1 relative flex justify-center xl:justify-end w-full "
             >
               {/* แสดงภาพในมือถือและ iPad */}
@@ -51,7 +52,7 @@ export default function Home() {
       <motion.section
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 1.5, ease: "easeInOut" }}
+        transition={{ delay: 0.6, duration: 0.2, ease: "easeInOut" }}
         viewport={{ once: true }}
         className="flex flex-col items-center min-h-[70vh] py-10 bg-[#f2f3f4]"
       >
@@ -92,7 +93,7 @@ export default function Home() {
           <motion.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
+          transition={{ duration: 0.2, ease: "easeInOut" }}
           viewport={{ once: true, amount: 0.2 }} // แสดงอนิเมชั่นเมื่อ 20% ของ section เข้าสู่ viewport
           className="md:h-[100vh] flex items-center overflow-hidden"
         >
@@ -107,6 +108,10 @@ export default function Home() {
               className="flex-[0.825] relative flex justify-center xl:justify-start w-full"
 
             >
+              {/* Mobile & Tablet Image */}
+              <div className="block xl:hidden mt-6 xl:mt-2 w-96 h-96 relative">
+                <Image src="/Assent2.png" layout="fill" objectFit="contain" quality={100} alt="Skin Care Image" />
+              </div>
 
               {/* Desktop Image */}
               <div className="hidden xl:block absolute bottom-0 left-10 translate-y-85">
@@ -120,12 +125,12 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.8, duration: 1, ease: "easeInOut" }}
               viewport={{ once: true, amount: 0.2 }}
-              className="w-full text-center xl:text-left xl:w-[500px]  px-8 xl:mr-[150px] xl:mr-auto xl:mb-[200px] mb-10"
+              className="w-full text-center xl:text-left xl:w-[500px]  px-8 xl:mr-[150px] xl:mr-auto mb-10"
             >
               <h1 className="intro text-6xl xl:text-7xl leading-tight">
                 Test <br /> Test2
               </h1>
-              <p>
+              <p className="mt-[20px]">
                   อะไรไม่รู้ใส่ไว้ก่อน ----------------------------------
                   ----------------------------------------------------------------
                   ----------------------------------------------------------------
@@ -134,15 +139,21 @@ export default function Home() {
 
               <button className="mt-5 border-2 border-[#9a77b0] text-[#9a77b0] px-4 py-1.5 rounded-md hover:bg-[#9a77b0] hover:text-white">Link</button>
             </motion.div>
-
-            {/* Mobile & Tablet Image */}
-              <div className="block xl:hidden mt-6 xl:mt-2 w-96 h-96 relative">
-                <Image src="/Assent2.png" layout="fill" objectFit="contain" quality={100} alt="Skin Care Image" />
-              </div>
-
           </div>
         </motion.section>
 
+      </div>
+
+      <div className="py-12 text-center px-10 xl:px-20 ">
+        <div className="End">
+          <div className="bg-[#9a77b0] text-white rounded-3xl p-8 hover:scale-105 duration-500 hover:shadow-2xl">
+            <p className=" text-4xl max-w-[700px] mx-auto leading-normal"> Good Luck <br/> EveryBody!!!</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <Member/>
       </div>
 
     </>
