@@ -6,7 +6,7 @@ import { MdLocalPhone } from "react-icons/md";
 const Footer = () => {
     return (
         <>
-        <footer className="bg-[#9a77b0] pt-12 pb-8 text-white">
+        <footer className="bg-[#af9acf] pt-12 pb-8 text-white">
             <div className="footerend pl-10 pr-10 ">
                 <div className=" justify-center">
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
