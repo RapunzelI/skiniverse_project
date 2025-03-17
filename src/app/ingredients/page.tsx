@@ -19,7 +19,7 @@ const ProductCard: React.FC<ProductProps> = ({ title, description, image, link }
             <img className="w-full h-[180px] md:h-[200px] object-cover" src={image} alt={title} draggable="false" />
             <div className="px-4 py-3">
                 <span className="tracking-widest text-xs text-gray-400 mb-1">
-                    Category
+                    หมวด
                 </span>
                 <div className="text-sm md:text-base font-medium mb-1">
                     <a href={link} className="no-underline text-gray-900">
