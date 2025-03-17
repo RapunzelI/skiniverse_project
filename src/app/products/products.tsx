@@ -1,21 +1,9 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
-
-interface BuyButtonProps {
-    link: string;
-}
-
-const BuyButton: React.FC<BuyButtonProps> = ({ link }) => {
-    return (
-        <a
-            href={link}
-            className="inline-block bg-purple-700 text-white px-4 py-2 text-sm font-semibold cursor-pointer tracking-widest rounded-full hover:bg-purple-600"
-        >
-            ดูเพิ่ม
-        </a>
-    );
-};
+import React, { useState } from "react";
+import { CiSearch } from "react-icons/ci";
+import { debounce } from "lodash";
+import "./style.css";
 
 interface ProductProps {
     title: string;
@@ -26,118 +14,87 @@ interface ProductProps {
 
 const ProductCard: React.FC<ProductProps> = ({ title, description, image, link }) => {
     return (
-        <div className="min-w-[300px] md:min-w-[350px] rounded-2xl overflow-hidden shadow-lg bg-white">
-            <img className="w-full h-[250px] md:h-[300px] object-cover" src={image} alt={title} draggable="false" />
-            <div className="px-6 py-4">
-                <span className="tracking-widest text-xs md:text-sm title-font font-medium text-gray-400 mb-1">
-                    Category
+        <div className="w-[165px] sm:w-[220px] md:w-[250px] lg:w-[280px] rounded-xl overflow-hidden shadow-md bg-white">
+            <img className="w-full h-[180px] md:h-[200px] object-cover" src={image} alt={title} draggable="false" />
+            <div className="px-4 py-3">
+                <span className="profont tracking-widest text-xs text-gray-400 mb-1">
+                    หมวด
                 </span>
-                <div className="text-md md:text-lg font-medium mb-2">
+                <div className="text-sm md:text-base font-medium mb-1">
                     <a href={link} className="no-underline text-gray-900">
                         {title}
                     </a>
                 </div>
-                <p className="text-gray-700 text-sm md:text-base">{description}</p>
-            </div>
-            <div className="px-6 pt-4 pb-2">
-                <BuyButton link={link} />
+                <p className="text-gray-600 text-xs md:text-sm">{description}</p>
             </div>
         </div>
     );
 };
 
-const products: React.FC = () => {
+const Products: React.FC = () => {
+    const [searchTerm, setSearchTerm] = useState<string>("");
+
+
     const productData: ProductProps[] = [
-        { title: "Product 1", description: "Description 1", image: "/banner_1.jpg", link: "#" },
+        { title: "Userin 1", description: "Description 1", image: "/banner_1.jpg", link: "#" },
         { title: "Product 2", description: "Description 2", image: "/banner_1.jpg", link: "#" },
         { title: "Product 3", description: "Description 3", image: "/banner_1.jpg", link: "#" },
         { title: "Product 4", description: "Description 4", image: "/banner_1.jpg", link: "#" },
         { title: "Product 5", description: "Description 5", image: "/banner_2.jpg", link: "#" },
         { title: "Product 6", description: "Description 6", image: "/banner_2.jpg", link: "#" },
+        { title: "Product 7", description: "Description 7", image: "/banner_2.jpg", link: "#" },
+        { title: "Product 8", description: "Description 8", image: "/banner_2.jpg", link: "#" },
     ];
 
-    const scrollRef = useRef<HTMLDivElement>(null);
-    const [activeIndex, setActiveIndex] = useState(0);
+    const handleSearch = debounce((value: string) => {
+        setSearchTerm(value);
+    }, 300); // 300ms debounce delay
 
-    let isDragging = false;
-    let startX = 0;
-    let scrollLeft = 0;
-
-    const startDrag = (e: React.MouseEvent | React.TouchEvent) => {
-        isDragging = true;
-        startX = "touches" in e ? e.touches[0].pageX : e.pageX;
-        scrollLeft = scrollRef.current?.scrollLeft || 0;
-    };
-
-    const onDrag = (e: React.MouseEvent | React.TouchEvent) => {
-        if (!isDragging || !scrollRef.current) return;
-        const x = "touches" in e ? e.touches[0].pageX : e.pageX;
-        const walk = (startX - x) * 1.5;
-        scrollRef.current.scrollLeft = scrollLeft + walk;
-    };
-
-    const stopDrag = () => {
-        isDragging = false;
-    };
-
-    useEffect(() => {
-        const updatePagination = () => {
-            if (!scrollRef.current) return;
-            const scrollLeft = scrollRef.current.scrollLeft;
-            const scrollWidth = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
-            const index = Math.round((scrollLeft / scrollWidth) * (productData.length - 1));
-            setActiveIndex(index);
-        };
-
-        const scrollContainer = scrollRef.current;
-        scrollContainer?.addEventListener("scroll", updatePagination);
-        return () => scrollContainer?.removeEventListener("scroll", updatePagination);
-    }, []);
+    const filteredProducts = productData.filter(product =>
+        product.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
     return (
         <div className="relative p-4">
-            <h2 className="text-6xl font-bold text-black text-left mb-4 p-4">
-                Products
+            <h2 className="profont text-black text-center mt-10 mb-6 p-4 text-4xl md:text-5xl lg:text-6xl">
+                ผลิตภัณฑ์
             </h2>
 
-            {/* Scrollable product container without scrollbar */}
-            <div 
-                ref={scrollRef} 
-                className="flex space-x-4 overflow-x-auto scroll-smooth p-4 mx-8 select-none no-scrollbar"
-                style={{ scrollBehavior: "smooth" }}
-                onMouseDown={startDrag}
-                onMouseMove={onDrag}
-                onMouseUp={stopDrag}
-                onMouseLeave={stopDrag}
-                onTouchStart={startDrag}
-                onTouchMove={onDrag}
-                onTouchEnd={stopDrag}
-            >
-                {productData.map((product, index) => (
-                    <ProductCard 
-                        key={index} 
-                        title={product.title} 
-                        description={product.description} 
-                        image={product.image} 
-                        link={product.link}
+            <div className="profont flex justify-center mb-10 ">
+                <div className="relative w-full max-w-md">
+                    <div className="absolute inset-y-0 left-0 flex items-center pl-3">
+                        <CiSearch className="text-black-800" />
+                    </div>
+                    <input
+                        type="text"
+                        placeholder="ค้นหาผลิตภัณฑ์..."
+                        className="w-full px-10 py-2 border rounded-full text-lg outline-none shadow-md"
+                        value={searchTerm || ""}
+                        onChange={(e) => setSearchTerm(e.target.value)}
                     />
-                ))}
+                </div>
             </div>
 
-            {/* Pagination Dots */}
-                <div className="flex justify-center mt-4">
-                    {productData.map((_, index) => (
-                        <span
-                            key={index}
-                            className={`h-1.25 w-1.25 mx-3 rounded-full transition-all ${
-                                index === activeIndex ? "bg-gray-900 scale-110" : "bg-gray-300"
-                            }`}
-                        ></span>
-                    ))}
+            <div className="flex justify-center">
+                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 px-2">
+                    {filteredProducts.length > 0 ? (
+                        filteredProducts.map((product, index) => (
+                            <ProductCard
+                                key={index}
+                                title={product.title}
+                                description={product.description}
+                                image={product.image}
+                                link={product.link}
+                            />
+                        ))
+                    ) : (
+                        <p className="profont text-center text-gray-500 col-span-full">ไม่พบข้อมูล</p>
+                    )}
                 </div>
-
+            </div>
+            <div className="h-50"></div>
         </div>
     );
 };
 
-export default products;
+export default Products;

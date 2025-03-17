@@ -2,6 +2,8 @@
 
 
 import React, { useRef, useState, useEffect } from "react";
+import { CiSearch } from "react-icons/ci";
+
 import "./style.css"
 
 interface ProductProps {
@@ -17,7 +19,7 @@ const ProductCard: React.FC<ProductProps> = ({ title, description, image, link }
             <img className="w-full h-[180px] md:h-[200px] object-cover" src={image} alt={title} draggable="false" />
             <div className="px-4 py-3">
                 <span className="tracking-widest text-xs text-gray-400 mb-1">
-                    Category
+                    หมวด
                 </span>
                 <div className="text-sm md:text-base font-medium mb-1">
                     <a href={link} className="no-underline text-gray-900">
@@ -35,12 +37,14 @@ const Ingredient: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState("");
 
     const productData: ProductProps[] = [
-        { title: "Ingredient 1", description: "Description 1", image: "/banner_1.jpg", link: "#" },
+        { title: "sodeee", description: "Description 1", image: "/banner_1.jpg", link: "/ingredients/pp" },
         { title: "Ingredient 2", description: "Description 2", image: "/banner_1.jpg", link: "#" },
         { title: "Ingredient 3", description: "Description 3", image: "/banner_1.jpg", link: "#" },
         { title: "Ingredient 4", description: "Description 4", image: "/banner_1.jpg", link: "#" },
         { title: "Ingredient 5", description: "Description 5", image: "/banner_2.jpg", link: "#" },
         { title: "Ingredient 6", description: "Description 6", image: "/banner_2.jpg", link: "#" },
+        { title: "Ingredient 7", description: "Description 7", image: "/banner_2.jpg", link: "#" },
+        { title: "Ingredient 8", description: "Description 8", image: "/banner_2.jpg", link: "#" },
     ];
 
     // กรองการ์ดตามคำค้นหา
@@ -56,14 +60,19 @@ const Ingredient: React.FC = () => {
             </h2>
 
             {/* ช่องค้นหา */}
-            <div className="ingre flex justify-center mb-6">
+             <div className="profont flex justify-center mb-10 ">
+                    <div className="relative w-full max-w-md">
+                        <div className="absolute inset-y-0 left-0 flex items-center pl-3">
+                            <CiSearch className="text-black-800" />
+                        </div>
                 <input
                     type="text"
                     placeholder="ค้นหาส่วนผสม..."
-                    className="w-full max-w-md px-4 py-2 border rounded-full text-lg outline-none shadow-md"
-                    value={searchTerm}
+                    className="w-full px-10 py-2 border rounded-full text-lg outline-none shadow-md"
+                    value={searchTerm || ""}
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
+            </div>
             </div>
 
             {/* Grid แสดงรายการการ์ด */}
@@ -80,7 +89,7 @@ const Ingredient: React.FC = () => {
                             />
                         ))
                     ) : (
-                        <p className="text-center text-gray-500 col-span-full">ไม่พบข้อมูล</p>
+                        <p className="ingre text-center text-gray-500 col-span-full">ไม่พบข้อมูล</p>
                     )}
                 </div>
             </div>
