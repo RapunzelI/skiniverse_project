@@ -15,8 +15,8 @@ const ProductCard: React.FC<ProductProps> = ({ title, description, image, link }
         <div className="w-[165px] sm:w-[220px] md:w-[250px] lg:w-[280px] rounded-xl overflow-hidden shadow-md bg-white">
             <img className="w-full h-[180px] md:h-[200px] object-cover" src={image} alt={title} draggable="false" />
             <div className="px-4 py-3">
-                <span className="tracking-widest text-xs text-gray-400 mb-1">
-                    Category
+                <span className="profont tracking-widest text-xs text-gray-400 mb-1">
+                    หมวด
                 </span>
                 <div className="text-sm md:text-base font-medium mb-1">
                     <a href={link} className="no-underline text-gray-900">
@@ -48,13 +48,13 @@ const Products: React.FC = () => {
     return (
         <div className="relative p-4">
             <h2 className="profont text-black text-center mt-10 mb-6 p-4 text-4xl md:text-5xl lg:text-6xl">
-                รายการสินค้า
+                รายการผลิตภัณฑ์
             </h2>
 
             <div className="profont flex justify-center mb-6">
                 <input
                     type="text"
-                    placeholder="ค้นหา..."
+                    placeholder="ค้นหาผลิตภัณฑ์..."
                     className="w-full max-w-md px-4 py-2 border rounded-full text-lg outline-none shadow-md"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
