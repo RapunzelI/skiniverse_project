@@ -61,4 +61,3 @@ const Intro: React.FC<CardProps> = ({ image, title, description }) => {
 };
 
 export default Intro;
-
