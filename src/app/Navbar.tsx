@@ -35,6 +35,9 @@ import { useState } from "react";
           <div className="hidden md:flex text-black ml-auto">
             <div className="container flex justify-center">
               <div className="flex w-fit gap-10 font-medium py-4 text-blackish">
+                <Link className="navbar_link relative" href="#">
+                  Dashboard
+                </Link>
                 <Link className="navbar_link relative" href="/compare">
                   Compare
                 </Link>
@@ -84,6 +87,9 @@ function MobileNav({ closeSideMenu }: { closeSideMenu: () => void }) {
             <Link className="navbar_link relative flex flex-row items-center space-x-2" href="/">
                 <GoHome /><span>Home</span>
             </Link>
+            <Link className="navbar_link relative flex flex-row items-center space-x-2" href="#">
+                  Dashboard
+                </Link>
             <Link className="navbar_link relative flex flex-row items-center space-x-2" href="/compare">
                 <IoIosGitCompare /><span>Compare</span>
             </Link>
