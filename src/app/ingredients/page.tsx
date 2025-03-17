@@ -1,21 +1,8 @@
 "use client";
 
+
 import React, { useRef, useState, useEffect } from "react";
-
-interface BuyButtonProps {
-    link: string;
-}
-
-const BuyButton: React.FC<BuyButtonProps> = ({ link }) => {
-    return (
-        <a
-            href={link}
-            className="inline-block bg-purple-700 text-white px-4 py-2 text-sm font-semibold cursor-pointer tracking-widest rounded-full hover:bg-purple-600"
-        >
-            ดูเพิ่ม
-        </a>
-    );
-};
+import "./style.css"
 
 interface ProductProps {
     title: string;
@@ -26,29 +13,29 @@ interface ProductProps {
 
 const ProductCard: React.FC<ProductProps> = ({ title, description, image, link }) => {
     return (
-        <div className="min-w-[300px] md:min-w-[350px] rounded-2xl overflow-hidden shadow-lg bg-white">
-            <img className="w-full h-[250px] md:h-[300px] object-cover" src={image} alt={title} draggable="false" />
-            <div className="px-6 py-4">
-                <span className="tracking-widest text-xs md:text-sm title-font font-medium text-gray-400 mb-1">
+        <div className="w-[165px] sm:w-[220px] md:w-[250px] lg:w-[280px] rounded-xl overflow-hidden shadow-md bg-white ">
+            <img className="w-full h-[180px] md:h-[200px] object-cover" src={image} alt={title} draggable="false" />
+            <div className="px-4 py-3">
+                <span className="tracking-widest text-xs text-gray-400 mb-1">
                     Category
                 </span>
-                <div className="text-md md:text-lg font-medium mb-2">
+                <div className="text-sm md:text-base font-medium mb-1">
                     <a href={link} className="no-underline text-gray-900">
                         {title}
                     </a>
                 </div>
-                <p className="text-gray-700 text-sm md:text-base">{description}</p>
-            </div>
-            <div className="px-6 pt-4 pb-2">
-                <BuyButton link={link} />
+                <p className="text-gray-600 text-xs md:text-sm">{description}</p>
             </div>
         </div>
     );
 };
 
-const ingredient: React.FC = () => {
+const Ingredient: React.FC = () => {
+    // ใช้ useState เพื่อเก็บค่าค้นหา
+    const [searchTerm, setSearchTerm] = useState("");
+
     const productData: ProductProps[] = [
-        { title: "Ingredient 1", description: "Description 1", image: "/banner_1.jpg", link: "#" },
+        { title: "Ingredient 1", description: "Description 1", image: "/banner_1.jpg", link: "/ingredients/pp" },
         { title: "Ingredient 2", description: "Description 2", image: "/banner_1.jpg", link: "#" },
         { title: "Ingredient 3", description: "Description 3", image: "/banner_1.jpg", link: "#" },
         { title: "Ingredient 4", description: "Description 4", image: "/banner_1.jpg", link: "#" },
@@ -56,87 +43,50 @@ const ingredient: React.FC = () => {
         { title: "Ingredient 6", description: "Description 6", image: "/banner_2.jpg", link: "#" },
     ];
 
-    const scrollRef = useRef<HTMLDivElement>(null);
-    const [activeIndex, setActiveIndex] = useState(0);
-
-    let isDragging = false;
-    let startX = 0;
-    let scrollLeft = 0;
-
-    const startDrag = (e: React.MouseEvent | React.TouchEvent) => {
-        isDragging = true;
-        startX = "touches" in e ? e.touches[0].pageX : e.pageX;
-        scrollLeft = scrollRef.current?.scrollLeft || 0;
-    };
-
-    const onDrag = (e: React.MouseEvent | React.TouchEvent) => {
-        if (!isDragging || !scrollRef.current) return;
-        const x = "touches" in e ? e.touches[0].pageX : e.pageX;
-        const walk = (startX - x) * 1.5;
-        scrollRef.current.scrollLeft = scrollLeft + walk;
-    };
-
-    const stopDrag = () => {
-        isDragging = false;
-    };
-
-    useEffect(() => {
-        const updatePagination = () => {
-            if (!scrollRef.current) return;
-            const scrollLeft = scrollRef.current.scrollLeft;
-            const scrollWidth = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
-            const index = Math.round((scrollLeft / scrollWidth) * (productData.length - 1));
-            setActiveIndex(index);
-        };
-
-        const scrollContainer = scrollRef.current;
-        scrollContainer?.addEventListener("scroll", updatePagination);
-        return () => scrollContainer?.removeEventListener("scroll", updatePagination);
-    }, []);
+    // กรองการ์ดตามคำค้นหา
+    const filteredProducts = productData.filter(product =>
+        product.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
     return (
         <div className="relative p-4">
-            <h2 className="text-4xl font-bold text-black text-left mb-4 p-4">
-                Ingredient
+            {/* หัวข้อ */}
+            <h2 className="ingre text-black text-center mb-6 p-4 text-4xl md:text-5xl lg:text-6xl">
+                อธิบายส่วนผสม
             </h2>
 
-            {/* Scrollable product container without scrollbar */}
-            <div 
-                ref={scrollRef} 
-                className="flex space-x-4 overflow-x-auto scroll-smooth p-4 mx-8 select-none no-scrollbar"
-                style={{ scrollBehavior: "smooth" }}
-                onMouseDown={startDrag}
-                onMouseMove={onDrag}
-                onMouseUp={stopDrag}
-                onMouseLeave={stopDrag}
-                onTouchStart={startDrag}
-                onTouchMove={onDrag}
-                onTouchEnd={stopDrag}
-            >
-                {productData.map((product, index) => (
-                    <ProductCard 
-                        key={index} 
-                        title={product.title} 
-                        description={product.description} 
-                        image={product.image} 
-                        link={product.link}
-                    />
-                ))}
+            {/* ช่องค้นหา */}
+            <div className="ingre flex justify-center mb-6">
+                <input
+                    type="text"
+                    placeholder="ค้นหาส่วนผสม..."
+                    className="w-full max-w-md px-4 py-2 border rounded-full text-lg outline-none shadow-md"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                />
             </div>
 
-            {/* Pagination Dots */}
-            <div className="flex justify-center mt-4">
-                {productData.map((_, index) => (
-                    <span
-                        key={index}
-                        className={`h-1.25 w-1.25 mx-3 rounded-full transition-all ${
-                            index === activeIndex ? "bg-gray-900 scale-110" : "bg-gray-300"
-                        }`}
-                    ></span>
-                ))}
+            {/* Grid แสดงรายการการ์ด */}
+            <div className="flex justify-center">
+                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 px-2">
+                    {filteredProducts.length > 0 ? (
+                        filteredProducts.map((product, index) => (
+                            <ProductCard
+                                key={index}
+                                title={product.title}
+                                description={product.description}
+                                image={product.image}
+                                link={product.link}
+                            />
+                        ))
+                    ) : (
+                        <p className="text-center text-gray-500 col-span-full">ไม่พบข้อมูล</p>
+                    )}
+                </div>
             </div>
+            <div className="h-50"></div>
         </div>
     );
 };
 
-export default ingredient;
+export default Ingredient;

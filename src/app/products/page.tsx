@@ -3,22 +3,19 @@
 import React from "react";
 import Slider from "react-slick";
 import Slide from "./slide";
+import Products from "./products";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
 const ScrollPic = () => {
-    
-    var settings = {
+    const settings = {
         dots: true,
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
         pauseOnHover: false,
-        TbBackground: null
-    
-    }
+    };
 
     const slideData = [
         {
@@ -51,12 +48,14 @@ const ScrollPic = () => {
         },
     ];
 
-    return(
-        <div className="container pt-6 flex justify-center">
-            <div className="max-w-[1050px] w-full px-4 ">
+    return (
+        <div className="w-full flex flex-col items-center bg-gray-100">
+            {/* สไลด์โชว์ */}
+            <div className="w-full max-w-[1200px] px-4 mt-8">
                 <Slider {...settings}>
                     {slideData.map((item) => (
-                        <Slide key={item.id}
+                        <Slide
+                            key={item.id}
                             img={item.img}
                             title={item.title}
                             mainTitle={item.mainTitle}
@@ -64,11 +63,10 @@ const ScrollPic = () => {
                         />
                     ))}
                 </Slider>
+                <Products />
             </div>
         </div>
+    );
+};
 
-    )
-
-} 
-
-export default ScrollPic
+export default ScrollPic;
