@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import SlideShow from "./silde";
 import CardList from "./cardlist" // นำเข้า SlideShow คอมโพเนนต์
-import "./style.css";  // Import CSS ปกติ
+import "./styleds.css";  // Import CSS ปกติ
 
 
 const Dashboard: React.FC = () => {
@@ -12,15 +12,15 @@ const Dashboard: React.FC = () => {
         <div className="slideShowContainer">
             <SlideShow />
         </div>
+        
         <div className="containerSkin flex justify-center items-center">
-            <h1 className="titleSkin text-center">Dashboard</h1>
-            
-            
+            <h1 className="titleSkin text-center text-5xl mt-20 mb-20">คลังความรู้</h1>
         </div>
 
-        <div>
-            <CardList/>
+        <div className="w-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[600px]">
+            <CardList />
         </div>
+        
     </>
   );
 };

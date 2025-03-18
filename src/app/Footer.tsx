@@ -6,19 +6,19 @@ import { MdLocalPhone } from "react-icons/md";
 const Footer = () => {
     return (
         <>
-        <footer className="bg-[#a087c6] pt-12 pb-8 text-white">
-            <div className="footerend pl-10 pr-10 ">
+        <footer className="footer bg-[#a087c6] pt-12 pb-8 text-white">
+            <div className="pl-10 pr-10 ">
                 <div className=" justify-center">
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
 
 
                         <div className="space-y-6 ">
-                            <h1 className="text-3xl">ที่มา</h1>
+                            <h1 className="section text-3xl">ที่มา</h1>
                             <p className="text-sm max-w-[300px]">
                                 เนื่องจากหลายคนไม่ค่อยรู้เรื่องเกี่ยวกับสกินแคร์ ทำให้ไม่รู้ว่า หากจะเริ่มต้นดูแลตนเองควรเริ่มต้นอย่างไรดี อีกทั้งเว็บไซต์ส่วนใหญ่เป็นภาษาอังกฤษทำให้ทำความเข้าใจยาก
                             </p>
 
-                            <h1 className="text-3xl">จุดประสงค์</h1>
+                            <h1 className="section text-3xl">จุดประสงค์</h1>
                             <p className="text-sm max-w-[300px]">
                                 เพื่อให้คนที่สนใจสามารถตรวจสอบส่วนผสมของผลิตภัณฑ์สินค้านั้นๆได้รวดเร็วและสามารถเปรียบเทียบราคาของสินค้าเพื่อใช้ในการตัดสินใจเลือกซื้อ ได้ง่ายยิ่งขึ้น 
                             </p>
@@ -27,22 +27,22 @@ const Footer = () => {
                         
 
                         <div className="space-y-6">
-                            <h1 className="text-3xl">Quick Links</h1>
+                            <h1 className="section text-3xl">Quick Links</h1>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 <div>
                                     <ul className="space-y-2">
-                                        <li><a href="/dashboard" className="hover:underline">Dashboard</a></li>
-                                        <li><a href="/compare" className="hover:underline">Compare</a></li>
-                                        <li><a href="/ingredients" className="hover:underline">Ingredients</a></li>
-                                        <li><a href="/products" className="hover:underline">Products</a></li>
+                                        <li><a href="/dashboard" className="hover:underline">คลังความรู้</a></li>
+                                        <li><a href="/compare" className="hover:underline">เทียบราคา</a></li>
+                                        <li><a href="/ingredients" className="hover:underline">ส่วนผสม</a></li>
+                                        <li><a href="/products" className="hover:underline">ผลิตภัณฑ์</a></li>
                                     </ul>
                                 </div>
                                 <div>
                                     <ul className="space-y-2">
-                                        <li><a href="/dashboard" className="hover:underline">Dashboard</a></li>
-                                        <li><a href="/compare" className="hover:underline">Compare</a></li>
-                                        <li><a href="/ingredients" className="hover:underline">Ingredients</a></li>
-                                        <li><a href="/products" className="hover:underline">Products</a></li>
+                                        <li><a href="/dashboard" className="hover:underline">คลังความรู้</a></li>
+                                        <li><a href="/compare" className="hover:underline">เทียบราคา</a></li>
+                                        <li><a href="/ingredients" className="hover:underline">ส่วนผสม</a></li>
+                                        <li><a href="/products" className="hover:underline">ผลิตภัณฑ์</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -51,7 +51,7 @@ const Footer = () => {
                         
 
                         <div className="space-y-6">
-                            <h1 className="text-3xl">อ้างอิง</h1>
+                            <h1 className="section text-3xl">อ้างอิง</h1>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 <div>
                                     <li>
@@ -126,7 +126,7 @@ const Footer = () => {
                         </div>
 
                             <div className="space-y-6 ">
-                                <h1 className="text-3xl">สถานที่ศึกษา</h1>
+                                <h1 className="section text-3xl">สถานที่ศึกษา</h1>
                                 <p className="text-sm max-w-[300px]">
                                     มหาวิทยาลัยหอการค้าไทย <br/>
                                     คณะ : วิทยาศาสตร์และเทคโนโลยี<br/>
@@ -135,7 +135,7 @@ const Footer = () => {
                                     ปีการศึกษาที่ : 2567 <br/>
                                     
                                 </p>
-                                <h1 className="text-3xl">ติดต่อมหาวิทยาลัย</h1>
+                                <h1 className="section text-3xl">ติดต่อมหาวิทยาลัย</h1>
                                 <p className="text-sm max-w-[300px]">
                                     126/1 ซอยวิภาวดีรังสิต 2
                                     แขวงรัชดาภิเษก เขตดินแดง

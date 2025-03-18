@@ -17,14 +17,9 @@
     border-bottom: 1px solid #D6CDC7;
   }
 
-  .search{
-  }
-
-
-
   .navbar_link {
-    font-family: "Podkova", serif;
-    font-size: 20px;
+    font-family: "Mitr", sans-serif;
+      font-weight: 400;
   }
 
   .navbar_link:hover {
@@ -49,6 +44,11 @@
     scale: 1;
   }
 
+  .search{
+    font-family: "Mitr", sans-serif;
+    font-weight: 300;
+  }
+
   .logo{
     font-family: 'Playwrite IT Moderna', serif;
   }
@@ -56,6 +56,18 @@
   .intro{
     font-family: "Mitr", sans-serif;
     font-weight: 520;
+    font-style: normal;
+  }
+
+  .introDS{
+    font-family: "Mitr", sans-serif;
+    font-weight: 120;
+    font-style: normal;
+  }
+
+  .btnDS{
+    font-family: "Mitr", sans-serif;
+    font-weight: 320;
     font-style: normal;
   }
 
@@ -68,6 +80,12 @@
   .adout{
     font-family: "Mitr", sans-serif;
     font-weight: 520;
+    font-style: normal;
+  }
+
+  .adoutcard{
+    font-family: "Mitr", sans-serif;
+    font-weight: 120;
     font-style: normal;
   }
 
@@ -217,13 +235,16 @@ body {
   color: var(--white-color);
 }
 .cardmb__name {
-  font-size: 3xl;
-  font-weight: 600;
+  font-family: "Mitr", sans-serif;
+    font-weight: 320;
+    font-style: normal;
+  
   margin-bottom: 0.25rem;
 }
 .cardmb__profession {
-  font-size: var(--smaller-font-size);
-  font-weight: 500;
+  font-family: "Mitr", sans-serif;
+    font-weight: 120;
+    font-style: normal;
 }
 
 /*=============== CARD INFO ===============*/
@@ -281,11 +302,15 @@ body {
   transition: transform 1s;
 }
 .info__name {
-  font-size: var(--normal-font-size);
+  font-family: "Mitr", sans-serif;
+    font-weight: 120;
+    font-style: normal;
   color: var(--title-color);
 }
 .info__profession, .info__location {
-  font-size: var(--smaller-font-size);
+  font-family: "Mitr", sans-serif;
+    font-weight: 120;
+    font-style: normal;
 }
 .info__social {
   display: flex;
@@ -329,5 +354,17 @@ body {
 .Member{
   font-family: "Mitr", sans-serif;
   font-weight: 520;
+  font-style: normal;
+}
+
+.footer{
+  font-family: "Mitr", sans-serif;
+  font-weight: 220;
+  font-style: normal;
+}
+
+.section{
+  font-family: "Mitr", sans-serif;
+  font-weight: 320;
   font-style: normal;
 }

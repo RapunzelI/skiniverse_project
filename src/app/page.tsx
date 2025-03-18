@@ -43,7 +43,7 @@ export default function Home() {
       <div className="py-12 text-center px-10 xl:px-20 ">
         <div className="End">
           <div className="bg-[#f2dfcf] text-black rounded-3xl p-8 hover:scale-105 duration-500 hover:shadow-2xl">
-            <p className=" text-4xl max-w-[700px] mx-auto leading-normal "> Good Luck <br/> Everyone!!!</p>
+            <p className=" text-4xl max-w-[700px] mx-auto leading-normal "> ขอบคุณทุกคน <br/> ที่สนใจเว็บไซต์ของเรา ! ! !</p>
           </div>
         </div>
       </div>

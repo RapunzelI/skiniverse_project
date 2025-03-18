@@ -45,7 +45,7 @@ const ScrollPic = () => {
     ];
 
     return (
-        <div className="w-full flex flex-col items-center bg-gray-100">
+        <div className="w-full flex flex-col items-center ">
             {/* สไลด์โชว์ */}
             <div className="w-full max-w-[1400px] px-4 md:px-6 lg:px-12 mt-8 mb-10">
                 <div className="w-full h-auto max-h-[500px] md:max-h-[600px] lg:max-h-[700px]">

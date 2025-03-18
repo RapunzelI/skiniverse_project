@@ -1,0 +1,53 @@
+.containerSkin {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.titleSkin {
+  font-family: "Mitr", sans-serif;
+  font-weight: 520;
+  font-style: normal;
+}
+
+.cardSkin {
+  margin: 15px 10px;
+  padding: 15px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 250px;  /* กำหนดขนาดเพื่อไม่ให้ใหญ่เกินไป */
+  height: 150px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardSkin h2 {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.cardSkin p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.cardSkin:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* ปรับ Container ของการ์ดให้ไม่เบียดกัน */
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; 
+  padding: 20px;
+  min-height: 500px;  /* ป้องกันการ์ดล้นออกจากพื้นที่ */
+}
+
+
+  

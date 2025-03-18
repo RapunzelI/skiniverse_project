@@ -9,6 +9,7 @@ import { GoHome } from "react-icons/go";
 import { IoIosGitCompare } from "react-icons/io";
 import { AiOutlineDeploymentUnit } from "react-icons/ai";
 import { AiOutlineProduct } from "react-icons/ai";
+import { TbLayoutDashboard } from "react-icons/tb";
 
 import { useState } from "react";
 
@@ -34,25 +35,26 @@ import { useState } from "react";
           {/* เมนูหลัก */}
           <div className="hidden md:flex text-black ml-auto">
             <div className="container flex justify-center">
-              <div className="flex w-fit gap-10 font-medium py-4 text-blackish mr-10">
+              <div className="flex text-center whitespace-nowrap gap-10 font-medium py-4 text-blackish mr-10">
                 <Link className="navbar_link relative" href="/dashboard">
-                  Dashboard
+                  คลังความรู้
                 </Link>
                 <Link className="navbar_link relative" href="/compare">
-                  Compare
+                  เทียบราคา
                 </Link>
                 <Link className="navbar_link relative" href="/ingredients">
-                  Ingredients
+                  ส่วนผสม
                 </Link>
                 <Link className="navbar_link relative" href="/products">
-                  Products
+                  ผลิตภัณฑ์
                 </Link> 
             </div>
             <div className="w-full sm:w-[250px] md:w-[50%] relative sm:pb-0 m-auto">
               <input
-                className="focus:outline-[#ed9e59] border-gray-200 border p-2 px-10 rounded-lg w-full text-black"
+                className=" search focus:outline-[#ed9e59] border-gray-200 border p-2 px-10 rounded-lg w-full text-black"
                 type="text"
-                placeholder="Search me..."
+                suppressHydrationWarning
+                placeholder="ค้นหา..."
                 
               />
               <FiSearch
@@ -60,9 +62,7 @@ import { useState } from "react";
                 size={20}
               />
               </div>
-            </div>
-  
-            
+            </div> 
           </div>
   
           <IoMenu onClick={openSideMenu} className="cursor-pointer text-4xl md:hidden" />
@@ -87,19 +87,19 @@ function MobileNav({ closeSideMenu }: { closeSideMenu: () => void }) {
 
           <div className="flex flex-col gap-4 ml-[15px]">
             <Link className="navbar_link relative flex flex-row items-center space-x-2" href="/">
-                <GoHome /><span>Home</span>
+                <GoHome /><span>หน้าหลัก</span>
             </Link>
             <Link className="navbar_link relative flex flex-row items-center space-x-2" href="/dashboard">
-                  Dashboard
-                </Link>
+                <TbLayoutDashboard /><span>คลังความรู้</span>
+            </Link>
             <Link className="navbar_link relative flex flex-row items-center space-x-2" href="/compare">
-                <IoIosGitCompare /><span>Compare</span>
+                <IoIosGitCompare /><span>เทียบราคา</span>
             </Link>
             <Link className="navbar_link relative flex flex-row items-center space-x-2" href="/ingredients">
-                <AiOutlineDeploymentUnit /><span>Ingredient</span>
+                <AiOutlineDeploymentUnit /><span>ส่วนผสม</span>
             </Link>
             <Link className="navbar_link relative flex flex-row items-center space-x-2" href="/products">
-                <AiOutlineProduct /><span>Product</span>
+                <AiOutlineProduct /><span>ผลิตภัณฑ์</span>
             </Link>
           </div>
 
