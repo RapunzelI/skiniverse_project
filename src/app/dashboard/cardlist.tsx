@@ -7,6 +7,7 @@ import { HiTableCells } from "react-icons/hi2";
 import { AiFillExperiment } from "react-icons/ai";
 import { BiSolidVial } from "react-icons/bi";
 
+
 const brands = [
     { title: "ประเภทผิว", name: "SkinType", icon: <CgGirl /> },
     { title: "ขั้นตอนลงสกินแคร์", name: "Core Routine", icon: <IoLayers /> },

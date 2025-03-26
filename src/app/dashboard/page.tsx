@@ -4,7 +4,7 @@ import Image from "next/image";
 import SlideShow from "./silde";
 import CardList from "./cardlist" // นำเข้า SlideShow คอมโพเนนต์
 import "./styleds.css";  // Import CSS ปกติ
-
+import Link from "next/link";
 
 const Dashboard: React.FC = () => {
   return (
@@ -19,6 +19,14 @@ const Dashboard: React.FC = () => {
 
         <div className="w-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[600px]">
             <CardList />
+        </div>
+
+        <div>
+          <Link href="/detail">
+            <button className="mb-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition">
+           ไปที่หน้ารายละเอียด
+          </button>
+          </Link>
         </div>
         
     </>
