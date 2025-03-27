@@ -1,6 +1,10 @@
-import React from "react";
+"use client";
 
-const Component: React.FC = () => {
+import React, { useState } from "react";
+import Link from "next/link";
+
+const Blog: React.FC = () => {
+
     return (
         <div id="webcrumbs">
             <div className="container mx-auto p-6 lg:min-w-[1200px]">
@@ -10,14 +14,15 @@ const Component: React.FC = () => {
                             หัวข้อเรื่อง
                         </h2>
                         <p className="text-sm text-gray-600 mb-4">รายละเอียดเนื้อหา</p>
+                        <Link href="/dashboard/blog/detail">
                         <button className="bg-black text-white rounded px-4 py-2 w-fit hover:bg-gray-800 transition-all duration-300 transform hover:scale-105">
                             Button
-                        </button>
+                        </button></Link>
                         {/* Next: "Add social media share buttons" */}
                     </div>
                     <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
                         <img
-                            src="https://images.unsplash.com/photo-1592337280469-e3a72b458d5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            src="/banner_1.jpg"
                             alt="Two pears on a light background"
                             className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                         />
@@ -28,7 +33,7 @@ const Component: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                     <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
                         <img
-                            src="https://images.unsplash.com/photo-1589533610925-1cffc309ebaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            src="/banner_2.jpg"
                             alt="Watermelon slices"
                             className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                         />
@@ -52,7 +57,7 @@ const Component: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="md:col-span-2 overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
                         <img
-                            src="https://images.unsplash.com/photo-1631160299919-6eda9d2c2b3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            src="/banner_3.png"
                             alt="Pears arrangement"
                             className="w-full h-full object-cover hover:scale-102 transition-transform duration-500"
                         />
@@ -67,7 +72,7 @@ const Component: React.FC = () => {
                     <div className="flex flex-col gap-6">
                         <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
                             <img
-                                src="https://images.unsplash.com/photo-1592337280469-e3a72b458d5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                src="/banner_4.png"
                                 alt="Two pears"
                                 className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
                             />
@@ -81,7 +86,7 @@ const Component: React.FC = () => {
                         </div>
                         <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
                             <img
-                                src="https://images.unsplash.com/photo-1621528916533-8906c976bc2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                src="/banner_5.jpg"
                                 alt="Mushrooms"
                                 className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
                             />
@@ -100,5 +105,4 @@ const Component: React.FC = () => {
     );
 };
 
-export default Component;
-
+export default Blog;

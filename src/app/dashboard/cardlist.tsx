@@ -9,25 +9,25 @@ import { BiSolidVial } from "react-icons/bi";
 
 
 const brands = [
-    { title: "ประเภทผิว", name: "SkinType", icon: <CgGirl /> },
-    { title: "ขั้นตอนลงสกินแคร์", name: "Core Routine", icon: <IoLayers /> },
-    { title: "ตารางการลงสกินแคร์", name: "Skin Cycling", icon: <HiTableCells /> },
-    { title: "ปัญหาสิวเฉพาะจุด", name: "Treatment", icon: <BiSolidVial /> },
-    { title: "สกินแคร์ที่เหมาะกับวัยนั้นๆ", name: "Skincare By Age", icon: <AiFillExperiment /> },
-    { title: "การเลือกซื้อ", name: "Shopping Guide", icon: <FaShoppingBasket /> },
-    { title: "Test", name: "1", icon: <CgGirl /> },
-    { title: "Test", name: "2", icon: <IoLayers /> },
-    { title: "Test", name: "3", icon: <HiTableCells /> },
-    { title: "Test", name: "4", icon: <BiSolidVial /> },
-    { title: "Test", name: "5", icon: <AiFillExperiment /> },
-    { title: "Test", name: "6", icon: <FaShoppingBasket /> },
+    { title: "ประเภทผิว", name: "SkinType", icon: <CgGirl /> ,link: "/dashboard/blog"},
+    { title: "ขั้นตอนลงสกินแคร์", name: "Core Routine", icon: <IoLayers /> ,link: "/"},
+    { title: "ตารางการลงสกินแคร์", name: "Skin Cycling", icon: <HiTableCells /> ,link: "/"},
+    { title: "ปัญหาสิวเฉพาะจุด", name: "Treatment", icon: <BiSolidVial /> ,link: "/"},
+    { title: "สกินแคร์ที่เหมาะกับวัยนั้นๆ", name: "Skincare By Age", icon: <AiFillExperiment /> ,link: "/"},
+    { title: "การเลือกซื้อ", name: "Shopping Guide", icon: <FaShoppingBasket /> ,link: "/"},
+    { title: "Test", name: "1", icon: <CgGirl /> ,link: "/"},
+    { title: "Test", name: "2", icon: <IoLayers /> ,link: "/"},
+    { title: "Test", name: "3", icon: <HiTableCells /> ,link: "/"},
+    { title: "Test", name: "4", icon: <BiSolidVial /> ,link: "/"},
+    { title: "Test", name: "5", icon: <AiFillExperiment /> ,link: "/"},
+    { title: "Test", name: "6", icon: <FaShoppingBasket /> ,link: "/"},
 ];
 
 const CardList: React.FC = () => {
     return (
         <div className="cardContainer">
             {brands.map((brand, index) => (
-                <CardDash key={index} icon={brand.icon} name={brand.name} title={brand.title} />
+                <CardDash key={index} icon={brand.icon} name={brand.name} title={brand.title} link={brand.link}/>
             ))}
         </div>
     );
