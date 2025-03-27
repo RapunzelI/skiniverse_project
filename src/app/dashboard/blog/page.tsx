@@ -2,18 +2,20 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Gallery from "./gallery";
 
 const Blog: React.FC = () => {
 
     return (
-        <div id="webcrumbs">
-            <div className="container mx-auto p-6 lg:min-w-[1200px]">
+        <div>
+        <div >
+            <div className="containermain mx-auto p-26 lg:min-w-[1200px]">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                     <div className="flex flex-col justify-center">
                         <h2 className="text-2xl font-bold mb-3 transition-transform hover:translate-x-1">
-                            หัวข้อเรื่อง
+                            กดอันนี้ตรง button
                         </h2>
-                        <p className="text-sm text-gray-600 mb-4">รายละเอียดเนื้อหา</p>
+                        <p className="text-sm text-gray-600 mb-4">ง่วงละเดี๋ยวค่อยต่อพรุ่งนี้</p>
                         <Link href="/dashboard/blog/detail">
                         <button className="bg-black text-white rounded px-4 py-2 w-fit hover:bg-gray-800 transition-all duration-300 transform hover:scale-105">
                             Button
@@ -100,7 +102,15 @@ const Blog: React.FC = () => {
                         </div>
                     </div>
                 </div>
+                
             </div>
+
+            <div>
+                <Gallery/>
+            </div>
+            
+        </div>
+        
         </div>
     );
 };
