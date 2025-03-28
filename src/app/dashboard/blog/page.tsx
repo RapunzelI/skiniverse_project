@@ -9,7 +9,7 @@ const Blog: React.FC = () => {
     return (
         <div>
         <div >
-            <div className="containermain mx-auto p-26 lg:min-w-[1200px]">
+            <div className="containermain mx-auto p-10 lg:min-w-[1200px]">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                     <div className="flex flex-col justify-center">
                         <h2 className="text-2xl font-bold mb-3 transition-transform hover:translate-x-1">

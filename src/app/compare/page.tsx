@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState } from 'react';
 import { RiResetRightFill } from 'react-icons/ri';  // Import the reset icon
@@ -52,6 +52,7 @@ export default function SkincarePriceCompare() {
   };
 
   return (
+  <>
     <div className="compare max-w-4xl mx-auto p-4 space-y-6">
       <h1 className="text-3xl">เปรียบเทียบราคาสกินแคร์</h1>
       {products.map((product, index) => (
@@ -147,5 +148,6 @@ export default function SkincarePriceCompare() {
         </div>
       </div>
     </div>
+    </>
   );
 }
