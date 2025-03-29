@@ -5,8 +5,8 @@ import Image from "next/image";
 import { CiSearch } from "react-icons/ci";
 import "./style.css";
 
-const SearchBar: React.FC = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+const ProductPage: React.FC = () => {
+  const [productSearchTerm, setProductSearchTerm] = useState("");
 
   return (
     <div className="Dt bg-gray-100 flex flex-col items-center min-h-screen p-8">
@@ -18,38 +18,38 @@ const SearchBar: React.FC = () => {
           </div>
           <input
             type="text"
-            placeholder="ค้นหาส่วนผสม..."
+            placeholder="ค้นหาผลิตภัณฑ์..."
             className="w-full px-10 py-2 border rounded-full text-lg outline-none shadow-md"
-            value={searchTerm || ""}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            value={productSearchTerm || ""}
+            onChange={(e) => setProductSearchTerm(e.target.value)}
           />
         </div>
       </div>
 
-      {/* ส่วนที่มีรูปภาพและเนื้อหา */}
+      {/* ส่วนที่มีรูปภาพและเนื้อหาผลิตภัณฑ์ */}
       <div className="container w-full md:w-2/3 flex flex-col md:flex-row items-center gap-6 mt-2">
         {/* รูปภาพ */}
         <Image
-          src="/intest.png"
-          alt="Ingredient"
-          width={350}
-          height={350}
-          className="w-80 h-80 rounded-lg shadow-md bg-white"
+          src="/TheOrd.png"
+          alt="Product"
+          width={400}
+          height={400}
+          className="w-80 h-90 rounded-lg shadow-md bg-white"
         />
 
         {/* เนื้อหาด้านขวา */}
         <div className="container flex flex-col w-full md:w-1/2 min-h-[150px] mt-2 md:mt-0">
-          {/* กล่องรอบชื่อส่วนผสม */}
+          {/* กล่องรอบชื่อผลิตภัณฑ์ */}
           <div className="w-full p-4 bg-white rounded-md shadow-md mb-2">
-            <h2 className="text-3xl font-bold">ชื่อส่วนผสม</h2>
-            <p className="text-gray-600 mt-2">รายละเอียดของส่วนผสมที่นี่...</p>
+            <h2 className="text-3xl font-bold">ชื่อผลิตภัณฑ์</h2>
+            <p className="text-gray-600 mt-2">รายละเอียดของผลิตภัณฑ์ที่นี่...</p>
           </div>
         </div>
       </div>
 
-      {/* ส่วนล่าง: รายละเอียด */}
+      {/* ส่วนล่าง: รายละเอียดผลิตภัณฑ์ */}
       <div className="container w-full md:w-2/3 bg-white flex flex-col p-6 mt-6 rounded-lg shadow-lg">
-        <h3 className="text-2xl font-semibold mb-4">รายละเอียด</h3>
+        <h3 className="text-2xl font-semibold mb-4">รายละเอียดผลิตภัณฑ์</h3>
         <p className="text-gray-700 mb-4">
           บลาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาาา
         </p>
@@ -61,9 +61,9 @@ const SearchBar: React.FC = () => {
         </p>
       </div>
 
-      {/* กล่องด้านล่าง */}
+      {/* กล่องด้านล่าง: ข้อมูลเพิ่มเติม */}
       <div className="container w-full md:w-2/3 bg-white flex flex-col p-6 mt-6 rounded-lg shadow-lg">
-        <h3 className="text-2xl font-semibold mb-4">พรูฟฟี</h3>
+        <h3 className="text-2xl font-semibold mb-4">ข้อมูลเพิ่มเติม</h3>
         <p className="text-gray-700 mb-4">
           นี่คือส่วนของเนื้อหาเพิ่มเติมที่คุณสามารถแสดงในกล่องนี้ได้
         </p>
@@ -72,4 +72,4 @@ const SearchBar: React.FC = () => {
   );
 };
 
-export default SearchBar;
+export default ProductPage;
