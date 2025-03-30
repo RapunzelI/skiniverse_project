@@ -9,28 +9,12 @@ const ProductPage: React.FC = () => {
   const [productSearchTerm, setProductSearchTerm] = useState("");
 
   return (
-    <div className="Dt bg-gray-100 flex flex-col items-center min-h-screen p-8">
-      {/* ช่องค้นหา */}
-      <div className="profont flex justify-center mb-10">
-        <div className="relative w-full max-w-md">
-          <div className="absolute inset-y-0 left-0 flex items-center pl-3">
-            <CiSearch className="text-black-800" />
-          </div>
-          <input
-            type="text"
-            placeholder="ค้นหาผลิตภัณฑ์..."
-            className="w-full px-10 py-2 border rounded-full text-lg outline-none shadow-md"
-            value={productSearchTerm || ""}
-            onChange={(e) => setProductSearchTerm(e.target.value)}
-          />
-        </div>
-      </div>
-
+    <div className="Dt bg-gray-100 flex flex-col items-center min-h-screen p-8">      
       {/* ส่วนที่มีรูปภาพและเนื้อหาผลิตภัณฑ์ */}
       <div className="container w-full md:w-2/3 flex flex-col md:flex-row items-center gap-6 mt-2">
         {/* รูปภาพ */}
         <Image
-          src="/TheOrd.png"
+          src="https://imageforskiniverse.s3.ap-southeast-1.amazonaws.com/17242326828950.jpg"
           alt="Product"
           width={400}
           height={400}
