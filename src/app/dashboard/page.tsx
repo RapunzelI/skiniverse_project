@@ -16,8 +16,13 @@ const Dashboard: React.FC = () => {
         <div className="containerSkin flex justify-center items-center">
             <h1 className="titleSkin text-center text-5xl mt-20 mb-20">คลังความรู้</h1>
         </div>
-
+        <div>
+        <Link href="/dashboard/blog/add">
+          <button className="bg-blue-500 text-white px-4 py-2 rounded">Create</button>
+        </Link>
+      </div>
         <div className="w-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[600px]">
+        
             <CardList />
         </div>
 

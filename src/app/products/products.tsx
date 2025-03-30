@@ -36,7 +36,7 @@ const Products: React.FC = () => {
 
 
     const productData: ProductProps[] = [
-        { title: "Userin 1", description: "Description 1", image: "/banner_1.jpg", link: "#" },
+        { title: "Userin 1", description: "Description 1", image: "/banner_1.jpg", link: "/products/pp" },
         { title: "Product 2", description: "Description 2", image: "/banner_1.jpg", link: "#" },
         { title: "Product 3", description: "Description 3", image: "/banner_1.jpg", link: "#" },
         { title: "Product 4", description: "Description 4", image: "/banner_1.jpg", link: "#" },
