@@ -4,12 +4,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 @import "tailwindcss";
-@tailwind base;
-@tailwind component;
-@tailwind utilities;
-
-
-
 
 
 @layer {
@@ -50,8 +44,9 @@
   }
 
   .logo{
-    font-family: 'Playwrite IT Moderna', serif;
+    font-family: 'Playwrite IT Moderna', serif;  
   }
+
 
   .intro{
     font-family: "Mitr", sans-serif;
@@ -124,14 +119,7 @@
     color: #555;
   }
 
-  .cardmb{
-    @apply w-72 cursor-pointer border-b-4 rounded-md bg-gradient-to-t from-black/20 h-44
-    text-center px-3 py-7 self-end;
-  }
-
-  .cardmb-active{
-    @apply h-96;
-  }
+  
   
 }
 

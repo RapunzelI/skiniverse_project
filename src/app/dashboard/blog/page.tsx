@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Gallery from "./gallery";
+import HoverCards from "./hoverDisclosure";
 
 const Blog: React.FC = () => {
 
@@ -108,7 +109,12 @@ const Blog: React.FC = () => {
             <div>
                 <Gallery/>
             </div>
+
             
+            
+        </div>
+        <div>
+            <HoverCards/>
         </div>
         
         </div>
