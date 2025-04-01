@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { useParams } from "next/navigation"; // ✅ ใช้ useParams() แทน useRouter()
+import { useParams } from "next/navigation"; // ใช้ useParams() แทน useRouter()
 import Image from "next/image";
 
 interface Ingredient {
@@ -17,8 +17,8 @@ interface Ingredient {
 }
 
 const IngredientPage: React.FC = () => {
-  const params = useParams(); // ✅ ดึง id จาก URL
-  const id = params?.id; // ✅ ป้องกัน undefined
+  const params = useParams(); // ดึง id จาก URL
+  const id = params?.id; // ป้องกัน undefined
   const [ingredient, setIngredient] = useState<Ingredient | null>(null);
   const [loading, setLoading] = useState(true);
 
