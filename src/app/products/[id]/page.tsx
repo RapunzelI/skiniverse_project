@@ -128,7 +128,13 @@ const ProductPage: React.FC = () => {
               const ing = ingredients[name];
               return (
                 <tr key={index} className="text-gray-700">
-                  <td className="border border-gray-300 px-4 py-2">{name}</td>
+                  <td className="border border-gray-300 px-4 py-2">
+                    {ing ? (
+                      <a href={`/ingredients/${ing.id}`} className="text-blue-500 hover:underline">
+                        {name}
+                      </a>
+                      ) : (name)}
+                  </td>
                   <td className="border border-gray-300 px-4 py-2">{ing ? ing.whatItDoes : "ไม่พบข้อมูล"}</td>
                   <td className="border border-gray-300 px-4 py-2">{ing ? ing.rate : "ไม่พบข้อมูล"}</td>
                 </tr>
