@@ -81,7 +81,7 @@ const ScrollPic: React.FC = () => {
                   </span>
                   <div className="text-sm md:text-base font-medium mb-1">
                     <a href={`/products/${product.id}`} className="no-underline text-gray-900">
-                      {product.name}
+                      {product.brand} {product.name}
                     </a>
                   </div>
                 </div>
