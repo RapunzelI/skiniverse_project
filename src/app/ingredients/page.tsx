@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react"; // ✅ Import useEffect
+import React, { useState, useEffect } from "react"; // Import useEffect
 import { CiSearch } from "react-icons/ci";
 import "./style.css";
 
@@ -9,16 +9,17 @@ interface IngredientData {
   name: string;
   description: string;
   imageUrl: string;
+  categories: string;
 }
 
 const Ingredient: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [ingredients, setIngredients] = useState<IngredientData[]>([]); // ✅ ใช้ useState เก็บข้อมูล
+  const [ingredients, setIngredients] = useState<IngredientData[]>([]); // ใช้ useState เก็บข้อมูล
 
   useEffect(() => {
     fetch("http://localhost:8080/api/ingredients")
       .then((res) => res.json())
-      .then((data) => setIngredients(data)) // ✅ บันทึกข้อมูล API
+      .then((data) => setIngredients(data)) // บันทึกข้อมูล API
       .catch((error) => console.error("Error fetching ingredients:", error));
   }, []);
 
@@ -57,7 +58,7 @@ const Ingredient: React.FC = () => {
                   <img className="w-full h-[180px] md:h-[200px] object-cover" src={ingredient.imageUrl} alt={ingredient.name} draggable="false" />
                   <div className="px-4 py-3">
                     <span className="tracking-widest text-xs text-gray-400 mb-1">
-                      หมวด
+                      <p>{ingredient.categories}</p>
                     </span>
                     <div className="text-sm md:text-base font-medium mb-1">
                       <a href={`/ingredients/${ingredient.id}`} className="no-underline text-gray-900">
