@@ -36,11 +36,11 @@ const IngredientPage: React.FC = () => {
       });
   }, [id]);
 
-  if (loading) return <p className="text-center text-gray-700">กำลังโหลด...</p>;
-  if (!ingredient) return <p className="text-center text-gray-700">ไม่พบข้อมูล</p>;
+  if (loading) return <p className="Dt text-center text-gray-700">กำลังโหลด...</p>;
+  if (!ingredient) return <p className="Dt text-center text-gray-700">ไม่พบข้อมูล</p>;
 
   return (
-    <div className="container mx-auto p-6 bg-gray-100 min-h-screen flex flex-col items-center">
+    <div className="Dt container mx-auto p-6 bg-gray-100 min-h-screen flex flex-col items-center">
       <h1 className="text-3xl font-bold text-center text-gray-800 mb-4">{ingredient.name}</h1>
 
       <div className="flex justify-center mb-6">
@@ -52,7 +52,7 @@ const IngredientPage: React.FC = () => {
           className="rounded-lg shadow-md"
         />
       </div>
-      <div className="mt-6 w-full max-w-2xl bg-white rounded-lg shadow-lg p-6">
+      <div className="Dt mt-6 w-full max-w-2xl bg-white rounded-lg shadow-lg p-6">
         <h3 className="text-2xl font-semibold text-gray-800">ชื่อเรียกอื่น</h3>
         <p className="text-gray-700">{ingredient.alsoCalled}</p>
       </div>
