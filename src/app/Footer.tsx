@@ -31,7 +31,7 @@ const Footer = () => {
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 <div>
                                     <ul className="space-y-2">
-                                        <li><a href="/dashboard" className="hover:underline">คลังความรู้</a></li>
+                                        <li><a href="/knowledge" className="hover:underline">คลังความรู้</a></li>
                                         <li><a href="/compare" className="hover:underline">เทียบราคา</a></li>
                                         <li><a href="/ingredients" className="hover:underline">ส่วนผสม</a></li>
                                         <li><a href="/products" className="hover:underline">ผลิตภัณฑ์</a></li>
@@ -39,7 +39,7 @@ const Footer = () => {
                                 </div>
                                 <div>
                                     <ul className="space-y-2">
-                                        <li><a href="/dashboard" className="hover:underline">คลังความรู้</a></li>
+                                        <li><a href="/knowledge" className="hover:underline">คลังความรู้</a></li>
                                         <li><a href="/compare" className="hover:underline">เทียบราคา</a></li>
                                         <li><a href="/ingredients" className="hover:underline">ส่วนผสม</a></li>
                                         <li><a href="/products" className="hover:underline">ผลิตภัณฑ์</a></li>

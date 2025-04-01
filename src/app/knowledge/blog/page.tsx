@@ -17,7 +17,7 @@ const Blog: React.FC = () => {
                             กดอันนี้ตรง button
                         </h2>
                         <p className="text-sm text-gray-600 mb-4">ง่วงละเดี๋ยวค่อยต่อพรุ่งนี้</p>
-                        <Link href="/dashboard/blog/detail">
+                        <Link href="/knowledge/blog/1">
                         <button className="bg-black text-white rounded px-4 py-2 w-fit hover:bg-gray-800 transition-all duration-300 transform hover:scale-105">
                             Button
                         </button></Link>
