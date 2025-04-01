@@ -58,7 +58,7 @@ export default function Navbar() {
           <div className="hidden md:flex text-black ml-auto">
             <div className="container flex justify-center">
               <div className="flex text-center whitespace-nowrap gap-10 font-medium py-4 text-blackish mr-10">
-                <Link className="navbar_link relative" href="/dashboard">
+                <Link className="navbar_link relative" href="/knowledge">
                   คลังความรู้
                 </Link>
                 <Link className="navbar_link relative" href="/compare">
@@ -126,7 +126,7 @@ function MobileNav({ closeSideMenu }: { closeSideMenu: () => void }) {
               <GoHome />
               <span>หน้าหลัก</span>
             </Link>
-            <Link className="navbar_link relative flex flex-row items-center space-x-2" href="/dashboard">
+            <Link className="navbar_link relative flex flex-row items-center space-x-2" href="/knowledge">
               <TbLayoutDashboard />
               <span>คลังความรู้</span>
             </Link>

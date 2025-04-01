@@ -9,7 +9,7 @@ import { BiSolidVial } from "react-icons/bi";
 
 
 const brands = [
-    { title: "กดอันนี้นะบิ๊ก", name: "SkinType", icon: <CgGirl /> ,link: "/dashboard/blog"},
+    { title: "กดอันนี้นะบิ๊ก", name: "SkinType", icon: <CgGirl /> ,link: "/knowledge/blog"},
     { title: "ขั้นตอนลงสกินแคร์", name: "Core Routine", icon: <IoLayers /> ,link: "/"},
     { title: "ตารางการลงสกินแคร์", name: "Skin Cycling", icon: <HiTableCells /> ,link: "/"},
     { title: "ปัญหาสิวเฉพาะจุด", name: "Treatment", icon: <BiSolidVial /> ,link: "/"},

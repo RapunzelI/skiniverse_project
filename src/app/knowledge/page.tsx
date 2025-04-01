@@ -17,7 +17,7 @@ const Dashboard: React.FC = () => {
             <h1 className="titleSkin text-center text-5xl mt-20 mb-20">คลังความรู้</h1>
         </div>
         <div>
-        <Link href="/dashboard/blog/add">
+        <Link href="/knowledge/blog/add">
           <button className="bg-blue-500 text-white px-4 py-2 rounded">Create</button>
         </Link>
       </div>
