@@ -54,7 +54,9 @@ export default function AddBlog() {
                 <input type="text" name="title" placeholder="Title" onChange={handleChange} required className="border p-2 w-full"/>
                 <textarea name="content" placeholder="Content" onChange={handleChange} required className="border p-2 w-full"></textarea>
                 <input type="text" name="coverImg" placeholder="Cover Image URL" onChange={handleChange} className="border p-2 w-full"/>
-
+                <input type="text" name="tags" placeholder="tags" onChange={handleChange} className="border p-2 w-full"/>
+                <input type="text" name="categories" placeholder="categories" onChange={handleChange} className="border p-2 w-full"/>
+                <input type="text" name="products" placeholder="products" onChange={handleChange} className="border p-2 w-full"/>
                 <div>
                     <label className="block font-bold">Image URLs</label>
                     {formData.imgUrl.map((url, index) => (
