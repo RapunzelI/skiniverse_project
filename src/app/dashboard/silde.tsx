@@ -92,22 +92,22 @@ const SlideShow: React.FC = () => {
                 mainTitle={slides[currentSlide].mainTitle}
                 price={slides[currentSlide].price}
             />
-            <div className="absolute top-1/2 left-0 md:left-[50px] transform -translate-y-1/2 p-4">
+            <div className="absolute top-1/2 left-0 md:left-[50px] transform -translate-y-1/2 pl-3 md:pl-[25px]">
                 <button
                     onClick={goToPrevSlide}
-                    className="btnL w-12 h-12 text-4xl flex items-center justify-center rounded-full shadow-lg hover:bg-[#a087c6] !important"
+                    className=" flex items-center justify-center rounded-full  "
                     
                 >
-                    <FaCircleChevronLeft className="w-8 h-8" />
+                    <FaCircleChevronLeft className="btnL w-7 h-7 text-black hover:text-[#a087c6]" />
                 </button>
-            </div>
+            </div> 
 
-            <div className="absolute top-1/2 right-0 md:right-[50px] transform -translate-y-1/2 p-4">
+            <div className="absolute top-1/2 right-0 md:right-[50px] transform -translate-y-1/2 pr-3 md:pr-[25px]">
                 <button
                     onClick={goToNextSlide}
-                    className="btnR w-12 h-12 text-4xl flex items-center justify-center rounded-full shadow-lg hover:bg-[#a087c6] !important"
+                    className="flex items-center justify-center rounded-full  "
                 >
-                    <FaCircleChevronRight className="w-8 h-8" />
+                    <FaCircleChevronRight className="btnR w-7 h-7 text-black hover:text-[#a087c6]" />
                 </button>
             </div>
         </div>

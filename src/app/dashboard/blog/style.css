@@ -93,3 +93,8 @@ input:checked + label .description {
 .card[for="c4"] {
     background-image: url('/card1.png');
 }
+
+
+
+/*HoverDisclosure.tsx*/
+
