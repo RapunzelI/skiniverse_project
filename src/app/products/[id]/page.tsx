@@ -122,7 +122,7 @@ const ProductPage: React.FC = () => {
           </thead>
           <tbody>
             {product.ingredient.map((name, index) => {
-              const ing = ingredients[name];
+              const ing = ingredients.find((ingredient) => ingredient.name === name);
               return (
                 <tr key={index} className="text-gray-700">
                   <td className="border border-gray-300 px-4 py-2">
