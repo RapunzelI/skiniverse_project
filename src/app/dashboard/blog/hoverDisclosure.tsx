@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
+
+
 const cards = [
   { title: "THE CRAFT", icon: "✨", content: "Crafting digital experiences." },
   { title: "CSS ANIMATION", icon: "📝", content: "Learn smooth CSS animations." },
