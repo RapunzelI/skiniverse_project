@@ -49,11 +49,8 @@ const ProductPage: React.FC = () => {
         );
 
         return Promise.all(ingredientPromises).then((ingredientData) => {
-          const ingredientMap: { [key: string]: Ingredient | null } = {};
-          data.ingredient.forEach((name: string, index: number) => {
-            ingredientMap[name] = ingredientData[index] || null;
-          });
-          setIngredients(ingredientMap);
+          const ingredientList: Ingredient[] = ingredientData.filter((ing): ing is Ingredient => ing !== null);
+          setIngredients(ingredientList);
           setLoading(false);
         });
       })
@@ -143,9 +140,6 @@ const ProductPage: React.FC = () => {
           </tbody>
         </table>
       </div>
-
-      
-
       <div className="mt-6 w-full max-w-2xl bg-white rounded-lg shadow-lg p-6">
         <h3 className="text-2xl font-semibold text-gray-800">ลิงก์ผลิตภัณฑ์</h3>
         <ul className="list-disc pl-6 text-gray-700">
