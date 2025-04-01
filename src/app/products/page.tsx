@@ -51,9 +51,11 @@ const ScrollPic: React.FC = () => {
             ))}
           </Slider>
         </div>
-      </div><br/><br/><br/>
-            
-      <div className="profont flex justify-center mb-10">
+      </div><br/><br/>
+          <h2 className="proNormal text-black text-center mb-6 p-4 text-4xl md:text-5xl lg:text-6xl ">
+              ผลิตภัณฑ์
+          </h2>
+      <div className="proNormal flex justify-center mb-10">
         <div className="relative w-full max-w-md">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3">
             <CiSearch className="text-black-800" />
@@ -68,7 +70,7 @@ const ScrollPic: React.FC = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 px-2">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 px-2 pb-10">
         {products.length > 0 ? (
           products
             .filter((product) => product.name.toLowerCase().includes(searchTerm.toLowerCase()))
@@ -88,7 +90,7 @@ const ScrollPic: React.FC = () => {
               </div>
             ))
         ) : (
-          <p className="ingre text-center text-gray-500 col-span-full">ไม่พบข้อมูล</p>
+          <p className="text-center text-gray-500 col-span-full">ไม่พบข้อมูล</p>
         )}
       </div>
     </div>
