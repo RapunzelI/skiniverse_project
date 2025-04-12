@@ -47,9 +47,11 @@ const Blog: React.FC = () => {
                             หัวข้อเรื่อง
                         </h2>
                         <p className="text-sm text-gray-600 mb-4">รายละเอียด</p>
+                        <Link href="/knowledge/blog/2">
                         <button className="bg-black text-white rounded px-4 py-2 w-fit hover:bg-gray-800 transition-all duration-300 transform hover:scale-105">
                             Button
                         </button>
+                        </Link>
                         {/* Next: "Add read more link with arrow icon" */}
                     </div>
                 </div>
