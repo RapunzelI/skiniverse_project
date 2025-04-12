@@ -53,7 +53,7 @@ return(
                 ช่วยให้คุณสามารถเลือกอ่านและทำความเข้าใจเนื้อหาได้อย่างรวดเร็วและแม่นยำ
               </p>
 
-              <Link href="/dashboard">
+              <Link href="/knowledge">
                 <button
                   className="btnDS mt-5 border-2 border-[#9a77b0] text-[#9a77b0] px-4 py-1.5 rounded-md hover:bg-[#9a77b0] hover:text-white 
                     sm:mx-auto sm:block" // Center button in mobile view
