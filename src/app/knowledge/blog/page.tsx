@@ -60,11 +60,12 @@ const Blog: React.FC = () => {
                 {/* Next: "Add a horizontal divider below heading" */}
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="md:col-span-2 overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                    <Link href="/knowledge/blog/3" className="md:col-span-2 overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                    <div>
                         <img
                             src="/banner_3.png"
                             alt="Pears arrangement"
-                            className="w-full h-full object-cover hover:scale-102 transition-transform duration-500"
+                            className="w-full md:h-120 object-cover hover:scale-102 transition-transform duration-500"
                         />
                         <div className="p-3">
                             <h3 className="text-lg font-semibold transition-transform hover:translate-x-1">
@@ -74,35 +75,40 @@ const Blog: React.FC = () => {
                         </div>
                         {/* Next: "Add 'View details' button" */}
                     </div>
+                    </Link>
                     <div className="flex flex-col gap-6">
-                        <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
-                            <img
-                                src="/banner_4.png"
-                                alt="Two pears"
-                                className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
-                            />
-                            <div className="p-3">
-                                <h3 className="text-lg font-semibold transition-transform hover:translate-x-1">
-                                    หัวข้อเรื่อง
-                                </h3>
-                                <p className="text-sm text-gray-600">รายละเอียด</p>
+                        <Link href="/knowledge/blog/4">
+                            <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                                <img
+                                    src="/banner_4.png"
+                                    alt="Two pears"
+                                    className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
+                                />
+                                <div className="p-3">
+                                    <h3 className="text-lg font-semibold transition-transform hover:translate-x-1">
+                                        หัวข้อเรื่อง
+                                    </h3>
+                                    <p className="text-sm text-gray-600">รายละเอียด</p>
+                                </div>
+                                {/* Next: "Add rating stars" */}
                             </div>
-                            {/* Next: "Add rating stars" */}
-                        </div>
-                        <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
-                            <img
-                                src="/banner_5.jpg"
-                                alt="Mushrooms"
-                                className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
-                            />
-                            <div className="p-3">
-                                <h3 className="text-lg font-semibold transition-transform hover:translate-x-1">
-                                    หัวข้อเรื่อง
-                                </h3>
-                                <p className="text-sm text-gray-600">รายละเอียด</p>
+                        </Link>
+                        <Link href="/knowledge/blog/5">
+                            <div className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                                <img
+                                    src="/banner_5.jpg"
+                                    alt="Mushrooms"
+                                    className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
+                                />
+                                <div className="p-3">
+                                    <h3 className="text-lg font-semibold transition-transform hover:translate-x-1">
+                                        หัวข้อเรื่อง
+                                    </h3>
+                                    <p className="text-sm text-gray-600">รายละเอียด</p>
+                                </div>
+                                {/* Next: "Add 'New' badge overlay" */}
                             </div>
-                            {/* Next: "Add 'New' badge overlay" */}
-                        </div>
+                        </Link>
                     </div>
                 </div>
                 

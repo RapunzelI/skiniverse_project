@@ -5,6 +5,7 @@ import Slide from "./slide";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { CiSearch } from "react-icons/ci";
+import "./style.css";
 
 interface ProductsData {
   id: string;
@@ -41,6 +42,11 @@ const ScrollPic: React.FC = () => {
       .catch((error) => console.error("Error fetching products:", error));
   }, []);
 
+  // Function to handle navigation to product detail page
+  const navigateToProduct = (id: string) => {
+    window.location.href = `/products/${id}`;
+  };
+
   return (
     <div className="w-full flex flex-col items-center">
       <div className="w-full max-w-[1400px] px-4 md:px-6 lg:px-12 mt-8 mb-10">
@@ -51,10 +57,13 @@ const ScrollPic: React.FC = () => {
             ))}
           </Slider>
         </div>
-      </div><br/><br/>
-          <h2 className="proNormal text-black text-center mb-6 p-4 text-4xl md:text-5xl lg:text-6xl ">
-              ผลิตภัณฑ์
-          </h2>
+      </div>
+      <br/><br/>
+      
+      <h2 className="profont text-black text-center mb-6 p-4 text-4xl md:text-5xl lg:text-6xl">
+        ผลิตภัณฑ์
+      </h2>
+      
       <div className="proNormal flex justify-center mb-10">
         <div className="relative w-full max-w-md">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3">
@@ -75,16 +84,25 @@ const ScrollPic: React.FC = () => {
           products
             .filter((product) => product.name.toLowerCase().includes(searchTerm.toLowerCase()))
             .map((product) => (
-              <div key={product.id} className="w-[165px] sm:w-[220px] md:w-[250px] lg:w-[280px] rounded-xl overflow-hidden shadow-md bg-white">
-                <img className="w-full h-[180px] md:h-[200px] object-cover" src={product.imageUrl} alt={product.name} draggable="false" />
+              <div 
+                key={product.id} 
+                className="w-[165px] sm:w-[220px] md:w-[250px] lg:w-[280px] rounded-xl overflow-hidden shadow-md bg-white cursor-pointer hover:shadow-lg transition-shadow duration-300"
+                onClick={() => navigateToProduct(product.id)}
+              >
+                <img 
+                  className="w-full h-[180px] md:h-[200px] object-cover" 
+                  src={product.imageUrl} 
+                  alt={product.name} 
+                  draggable="false" 
+                />
                 <div className="px-4 py-3">
                   <span className="tracking-widest text-xs text-gray-400 mb-1">
                     <p>{product.categories.join(", ")}</p>
                   </span>
                   <div className="text-sm md:text-base font-medium mb-1">
-                    <a href={`/products/${product.id}`} className="no-underline text-gray-900">
+                    <span className="text-gray-900">
                       {product.brand} {product.name}
-                    </a>
+                    </span>
                   </div>
                 </div>
               </div>
